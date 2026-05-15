@@ -85,7 +85,7 @@ The full file contains a list of task objects:
 
 ## Notes
 
-The app is still in progress. Some parts of the current code may need cleanup,
+The project is still in progress. Some parts of the current code may need cleanup,
 especially the delete task logic and some input validation. The main purpose of
 the project is to practice Python basics, file handling, JSON storage, and
 command-line menus.
