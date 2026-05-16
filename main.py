@@ -5,7 +5,7 @@ import random
 
 FILE_NAME = "tasks.json"
 
-
+#Load all task in json
 def load_tasks():
     # Create file if it doesn't exist
     if not os.path.exists(FILE_NAME):
@@ -28,7 +28,7 @@ def load_tasks():
         print("Warning: tasks.json is corrupted. Resetting task list.")
         return []
 
-
+#Save task in json file
 def save_tasks(tasks):
     with open(FILE_NAME, "w", encoding="utf-8") as file:
         json.dump(tasks, file, indent=4)
@@ -73,7 +73,7 @@ def main():
             case _:
                 print("Please input the right choice!")
 
-
+#Create new task
 def createTask():
     tasks = load_tasks()
 
@@ -111,7 +111,6 @@ def searchTask():
     keywordId = int(input("Enter task name to search: "))
 
     found = False
-    #search for the id
     for task in tasks:
        if keywordId == task["taskId"]:
             print("\nTask Found:")
@@ -123,7 +122,7 @@ def searchTask():
     if not found:
         print("No matching task found.")
         print(tasks["taskId"])
-
+#Delete task
 def deleteTask():
     tasks = load_tasks()
 
@@ -140,7 +139,7 @@ def deleteTask():
         save_tasks(updated_tasks)
         print("Task deleted successfully!")
 
-
+#Update task
 def updateTask():
     tasks = load_tasks()
 
@@ -169,7 +168,7 @@ def updateTask():
     print("Task not found.")
 
 
-
+#Print all task
 def viewTasks():
     tasks = load_tasks()
 
